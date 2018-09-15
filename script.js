@@ -39,13 +39,10 @@ function getRandomQuote(arr) {
 
 function printQuote() {
   var selectedQuote = getRandomQuote(quotes);
-  var html =  '<p class="quote"> '+ selectedQuote.quoteText +' </p>' +
-  '<p class="source"> '+ selectedQuote.quoteAuthor +' </p>';
-
-}
-
+  var html =  '<p class="quote"> $ {selectedQuote.quoteText}</p>' +
+  '<p class="source">$ {selectedQuote.quoteAuthor}</p>';
 document.getElementById('quote-box').innerHTML = html;
-
+}
 
 // This event listener will respond to "Show another quote" button clicks
 // when user clicks anywhere on the button, the "printQuote" function is called
