@@ -29,15 +29,12 @@ var quotes = [
 }
 ];
 
-function print(quoteText) {
-  var outputDiv = document.getElementById('quote-box');
-  outputDiv.innerHTML = quoteText ; 
-}
+
 
 // Create the getRandomQuuote function and name it getRandomQuote
-function getRandomQuote() {
-  var randomQuote = Math.floor(Math.random() * quotes.length );
-  return randomQuote;
+function getRandomQuote(arr) {
+  var randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+  return (randomQuote);
 }
 
 // Create the printQuote funtion and name it printQuote
@@ -51,6 +48,6 @@ document.getElementById('quote-box').innerHTML = html;
 
 // This event listener will respond to "Show another quote" button clicks
 // when user clicks anywhere on the button, the "printQuote" function is called
-document.getElementById('loadQuote').addEventListener("click", printQuote, false); 
+document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
 // FSJS - Random Quote Generator
