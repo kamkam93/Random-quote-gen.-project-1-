@@ -1,5 +1,5 @@
 // FSJS - Random Quote Generator
-
+var html= "" ;
 // Create the array of quote objects and name it quotes
 var quotes = [
   {
@@ -27,24 +27,31 @@ var quotes = [
 "quoteText": "Life is like a sewer. What you get out of it depends on what you put into it.",
 "quoteAuthor": "Tom Lehrer"
 }
-]
+];
+
+function print(quoteText) {
+  var outputDiv = document.getElementById('quote-box');
+  outputDiv.innerHTML = quoteText ; 
+}
 
 // Create the getRandomQuuote function and name it getRandomQuote
-function getRandomQuote(arr) {
-  var randomQuote = quotes[Math.floor(Math.random() * quotes.length )];
-  return (randomQuote);
+function getRandomQuote() {
+  var randomQuote = Math.floor(Math.random() * quotes.length );
+  return randomQuote;
 }
 
 // Create the printQuote funtion and name it printQuote
 
 function printQuote() {
-  var selectedQuote = getRandomQuote(quotes);
-  var html =  '<p class="quote"> $ {selectedQuote.quoteText}</p>' +
-  '<p class="source">$ {selectedQuote.quoteAuthor}</p>';
+  var quotes = getRandomQuote(html);
+   html ='<p class="quote">' + quotes.quoteText + ' </p>;
+  html += '<p class="source">' + quotes.quoteAuthor +'</p>;
 document.getElementById('quote-box').innerHTML = html;
-}
+};
+
 
 // This event listener will respond to "Show another quote" button clicks
 // when user clicks anywhere on the button, the "printQuote" function is called
-document.getElementById('loadQuote').addEventListener("click", printQuote, false);
+document.getElementById('loadQuote').addEventListener("click", printQuote, false); 
+}
 // FSJS - Random Quote Generator
