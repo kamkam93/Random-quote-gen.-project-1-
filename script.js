@@ -44,8 +44,8 @@ function getRandomQuote() {
 
 function printQuote() {
   var quotes = getRandomQuote(html);
-   html ='<p class="quote">' + quotes.quoteText + ' </p>';
-  html += '<p class="source">' + quotes.quoteAuthor +'</p>';
+   html =`<p class="quote">` + quotes.quoteText + ` </p>`;
+  html += `<p class="source">` + quotes.quoteAuthor +`</p>`;
 document.getElementById('quote-box').innerHTML = html;
 };
 
